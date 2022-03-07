@@ -49,7 +49,7 @@ type widgetTable struct {
 func start(lv levelArg, winPos Pos) (bool, int, Pos) {
 // ---------------------------------------------------------Data
 	data := new(dataTable)
-    data.dataInit(lv)
+	data.dataInit(lv)
 // ---------------------------------------------------------Window ->
 	win := fltk.NewWindow(CELL * data.Size, CELL * data.Size + 30)
 	win.SetLabel("Mine Sweeper")
@@ -71,10 +71,10 @@ func start(lv levelArg, winPos Pos) (bool, int, Pos) {
 				win.Destroy()
 			}
 		}())
-    }
+	}
 // ---------------------------------------------------------Widget
-    widget := new(widgetTable)
-    widget.cells = make([][]*fltk.Button, data.Size)
+	widget := new(widgetTable)
+	widget.cells = make([][]*fltk.Button, data.Size)
 	widget.btns = make([][]*fltk.Button, data.Size)
 	for row := range widget.btns {
 		widget.cells[row] = make([]*fltk.Button, data.Size)
@@ -97,8 +97,8 @@ func start(lv levelArg, winPos Pos) (bool, int, Pos) {
     win.Show()
     fltk.Run()
 // -------------------------------------------------------- After window destroy
-    timer.cmdRun = false
-    return cmdStart, index, winPos
+	timer.cmdRun = false
+	return cmdStart, index, winPos
 
 }
 
