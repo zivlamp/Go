@@ -5,7 +5,7 @@ import (
 
 	"fmt"
 	"math/rand"
-    "time"
+	"time"
 )
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Main
 const CELL = 30
@@ -93,9 +93,9 @@ func start(lv levelArg, winPos Pos) (bool, int, Pos) {
 	}
 	widget.remainShow = fltk.NewBox(fltk.FLAT_BOX,  CELL * data.Size - 50, 0, 50, 30, fmt.Sprintf("%d", data.Qty))
 // -------------------------------------------------------- <- Window
-    win.End()
-    win.Show()
-    fltk.Run()
+	win.End()
+	win.Show()
+	fltk.Run()
 // -------------------------------------------------------- After window destroy
 	timer.cmdRun = false
 	return cmdStart, index, winPos
@@ -286,8 +286,8 @@ type myTimer struct {
 type Timespan time.Duration
 
 func (t Timespan) Format(format string) string {
-    z := time.Unix(0, 0).UTC()
-    return z.Add(time.Duration(t)).Format(format)
+	z := time.Unix(0, 0).UTC()
+	return z.Add(time.Duration(t)).Format(format)
 }
 
 func timerSet(timer *myTimer) {
