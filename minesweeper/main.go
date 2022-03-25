@@ -299,7 +299,7 @@ func timerSet(timer *myTimer) {
 			myTicker.Stop()
 			return
 		}
-		dur := flashTime.Round(time.Second).Sub(beginTime)
+		dur := flashTime.Sub(beginTime)
 		timer.durText = Timespan(dur).Format("15:04:05")
 		// fmt.Println(timer.durText)
 	}
